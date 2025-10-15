@@ -1,214 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Nintendo DS Interactive Exhibit</title>
-<style>
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 20px;
-  background: #fafafa;
-  color: #222;
-}
-h1 {
-  font-size: 26px;
-  margin-bottom: 8px;
-  text-align: center;
-}
-p {
-  max-width: 700px;
-  margin: 0 auto 20px auto;
-  text-align: center;
-}
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-.card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 16px;
-  flex: 1;
-  min-width: 280px;
-  max-width: 340px;
-}
-h2 {
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 18px;
-  color: #d32f2f;
-}
-.gallery img {
-  width: 100px;
-  height: 70px;
-  object-fit: cover;
-  border: 1px solid #ccc;
-  margin: 4px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: transform 0.2s;
-}
-.gallery img:hover {
-  transform: scale(1.05);
-}
-#mainImg {
-  width: 100%;
-  border-radius: 8px;
-  border: 2px solid #ccc;
-}
-.timeline div {
-  border-left: 4px solid #1976d2;
-  padding: 8px;
-  margin: 6px 0;
-  cursor: pointer;
-  background: #f2f2f2;
-  transition: background 0.3s;
-}
-.timeline div:hover {
-  background: #e0f2f1;
-}
-button {
-  background: #1976d2;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 8px 12px;
-  margin: 6px;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-button:hover {
-  background: #0d47a1;
-}
-#touchscreen {
-  width: 240px;
-  height: 160px;
-  border: 3px solid #555;
-  border-radius: 8px;
-  margin: 10px auto;
-  background: #fff;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-}
-#touchscreen div {
-  border: 1px solid #eee;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  color: #444;
-  user-select: none;
-}
-#info {
-  text-align: center;
-  margin-top: 8px;
-  font-weight: bold;
-}
-footer {
-  text-align: center;
-  font-size: 14px;
-  margin-top: 30px;
-  color: #666;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nintendo DS & 3DS Family Timeline</title>
+
+  <!-- DM Sans font -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Nintendo DS Interactive Exhibit</h1>
-<p>Explore the Nintendo DS, the handheld that introduced dual screens, touch input, and new ways to play. Click images, use the timeline, and try the touchscreen!</p>
+  <h1 class="ds-title">Nintendo DS & 3DS Family Timeline</h1>
 
-<div class="container">
-
-  <!-- GALLERY -->
-  <div class="card">
-    <h2>Hardware Gallery</h2>
-    <img id="mainImg" src="ds_original.jpg" alt="Nintendo DS">
-    <div class="gallery">
-      <img src="ds_original.jpg" alt="DS Original" onclick="show('ds_original.jpg')">
-      <img src="ds_lite.jpg" alt="DS Lite" onclick="show('ds_lite.jpg')">
-      <img src="dsi.jpg" alt="DSi" onclick="show('dsi.jpg')">
-      <img src="dsi_xl.jpg" alt="DSi XL" onclick="show('dsi_xl.jpg')">
-    </div>
+  <div class="timeline">
+    <div class="timeline-entry" data-target="ds_original">2004 — Nintendo DS</div>
+    <div class="timeline-entry" data-target="ds_lite">2006 — DS Lite</div>
+    <div class="timeline-entry" data-target="dsi">2008 — DSi</div>
+    <div class="timeline-entry" data-target="dsi_xl">2009 — DSi XL</div>
+    <div class="timeline-entry" data-target="3ds">2011 — 3DS</div>
+    <div class="timeline-entry" data-target="3ds_xl">2012 — 3DS XL</div>
+    <div class="timeline-entry" data-target="2ds">2013 — 2DS</div>
+    <div class="timeline-entry" data-target="new_3ds">2014 — New 3DS / New 3DS XL </div>
+    <div class="timeline-entry" data-target="new2ds_xl">2017 — New 2DS XL</div>
   </div>
 
-  <!-- TIMELINE -->
-  <div class="card">
-    <h2>DS Timeline</h2>
-    <div class="timeline">
-      <div onclick="setTimeline(0)">🕹️ 2004 — Nintendo DS launches with dual screens and stylus control.</div>
-      <div onclick="setTimeline(1)">💡 2006 — DS Lite redesign: slimmer, brighter, and wildly popular.</div>
-      <div onclick="setTimeline(2)">📷 2008 — DSi adds cameras and digital downloads (DSiWare).</div>
-      <div onclick="setTimeline(3)">🔍 2009 — DSi XL: larger screens for family and group play.</div>
-    </div>
-    <p id="info">Click a timeline entry to learn more and see the matching console!</p>
+  <div class="gallery">
+    <img id="ds_original" src="images/ds_original.jpg" alt="Original Nintendo DS" class="active">
+    <p class="caption active">2004: The original Nintendo DS — the console that started the dual-screen handheld family.</p>
+
+    <img id="ds_lite" src="images/ds_lite.jpg" alt="Nintendo DS Lite">
+    <p class="caption">2006: DS Lite — a slimmer, brighter version of the original DS.</p>
+
+    <img id="dsi" src="images/dsi.jpg" alt="Nintendo DSi">
+    <p class="caption">2008: DSi — added cameras, storage options, and online capabilities.</p>
+
+    <img id="dsi_xl" src="images/dsi_xl.jpg" alt="Nintendo DSi XL">
+    <p class="caption">2009: DSi XL — a larger version of the DSi with bigger screens and improved comfort.</p>
+
+    <img id="3ds" src="images/3ds.png" alt="Nintendo 3DS">
+    <p class="caption">2011: 3DS — introduced 3D graphics and backward compatibility with DS games.</p>
+
+    <img id="3ds_xl" src="images/3ds_xl.png" alt="Nintendo 3DS XL">
+    <p class="caption">2012: 3DS XL — a larger version of the 3DS with bigger screens and enhanced comfort.</p>
+
+    <img id="2ds" src="images/2ds.png" alt="Nintendo 2DS">
+    <p class="caption">2013: 2DS — an affordable, flat design version of the 3DS without 3D functionality.</p>
+
+    <img id="new_3ds" src="images/new3ds_xl.jpg" alt="Nintendo New 3DS / New 3DS XL">
+    <p class="caption">2014: New 3DS / New 3DS XL — improved processing power, additional controls, and enhanced 3D.</p>
+
+    <img id="new2ds_xl" src="images/new2ds_xl.png" alt="Nintendo New 2DS XL">
+    <p class="caption">2017: New 2DS XL — a more affordable version of the New 3DS XL, retaining the clamshell design without 3D.</p>
   </div>
 
-  <!-- TOUCHSCREEN DEMO -->
-  <div class="card">
-    <h2>Touchscreen Demo</h2>
-    <div id="touchscreen"></div>
-    <p id="touchmsg">Tap the boxes to interact!</p>
-    <button onclick="playSound('startup.mp3')">Play DS Startup Sound</button>
-    <button onclick="playSound('mariokart.mp3')">Play Game Sound</button>
-  </div>
-</div>
-
-<footer>© Exhibit by [Your Name] — Nintendo DS: The Dual-Screen Revolution</footer>
-
-<script>
-// Image switcher
-function show(src) { 
-  document.getElementById("mainImg").src = src; 
-}
-
-// Timeline data (text + corresponding image)
-const timelineData = [
-  {
-    text: "2004: The original Nintendo DS introduced two screens and a stylus, changing handheld gaming forever.",
-    image: "ds_original.jpg"
-  },
-  {
-    text: "2006: The DS Lite became a global phenomenon for its sleek design and longer battery life.",
-    image: "ds_lite.jpg"
-  },
-  {
-    text: "2008: The DSi added cameras, an SD slot, and digital downloads — paving the way for future consoles.",
-    image: "dsi.jpg"
-  },
-  {
-    text: "2009: The DSi XL encouraged shared play with huge screens perfect for families.",
-    image: "dsi_xl.jpg"
-  }
-];
-
-// Combined timeline function
-function setTimeline(i) {
-  document.getElementById("info").textContent = timelineData[i].text;
-  document.getElementById("mainImg").src = timelineData[i].image;
-  new Audio("touchclick.mp3").play();
-}
-
-// Touchscreen grid setup
-const grid = document.getElementById("touchscreen");
-for (let i = 1; i <= 9; i++) {
-  const cell = document.createElement("div");
-  cell.textContent = " ";
-  cell.addEventListener("click", () => {
-    cell.textContent = ["★","♪","✔","☀","♥","✈","★","♪","✔"][i-1];
-    document.getElementById("touchmsg").textContent = "You touched box " + i + "!";
-    new Audio("touchclick.mp3").play();
-  });
-  grid.appendChild(cell);
-}
-
-// Sound playback
-function playSound(file) {
-  new Audio(file).play();
-}
-</script>
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
